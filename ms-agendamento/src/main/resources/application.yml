@@ -1,0 +1,55 @@
+server:
+#  port: ${PORT:0}
+  port: 8084
+spring:
+  application:
+    name: MS-AGENDAMENTO
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/agendamento-db}
+    username: ${DATASOURCE_USERNAME:postgres}
+    password: ${DATASOURCE_PASSWORD:example}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  output:
+    ansi:
+      enabled: ALWAYS
+
+  # Configurações de e-mail
+  mail:
+    host: ${HOST_MAIL}
+    port: ${PORT}
+    username: ${HOST_USERNAME}
+    password: ${HOST_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+eureka:
+  client:
+    service-url:
+      defaultZone: ${URL_SERVICE_DISCOVERY:http://localhost:8761/eureka}
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+# Configuracoes de log
+logging:
+  pattern:
+    console: '%clr(%d{dd-MM-yyyy HH:mm:ss}){faint} %clr(%5p) %clr([%t]){faint} %clr(%-40.40logger){cyan} %clr(:){yellow} %m%n'
+  file:
+    name: app.log
+  level:
+    root: info
+    br:
+      com:
+        bgrbarbosa:
+          eventos-api: info
+
+
