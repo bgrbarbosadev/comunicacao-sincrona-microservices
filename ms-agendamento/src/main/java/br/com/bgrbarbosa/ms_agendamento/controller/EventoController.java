@@ -5,6 +5,7 @@ import br.com.bgrbarbosa.ms_agendamento.controller.mapper.EventoMapper;
 import br.com.bgrbarbosa.ms_agendamento.model.Evento;
 import br.com.bgrbarbosa.ms_agendamento.service.EventoService;
 import br.com.bgrbarbosa.ms_agendamento.service.exception.ResourceNotFoundException;
+import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "/agendamento/evento")
+@Hidden
 public class EventoController {
 
     @Autowired

@@ -16,7 +16,13 @@ public interface AgendamentoService {
 
     Agendamento save(Agendamento agendamento);
 
+    Agendamento update(Agendamento agendamento);
+
+    void confirm(UUID id);
+
+    void cancel(UUID id);
+
     void delete(UUID uuid);
 
-    void enviar(Agendamento agendamento, String assunto);
+    void enviar(Agendamento agendamento, String assunto, String mensagem);
 }
