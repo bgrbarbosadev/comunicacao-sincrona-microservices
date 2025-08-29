@@ -37,7 +37,7 @@ Bash:
 git clone https://github.com/bgrbarbosadev/comunicacao-sincrona-microservices.git </br>
 cd comunicacao-sincrona-microservices </br></br>
 
-2) Crie um arquivo de variáveis de ambiente com base no exemplo:
+2) Crie um arquivo de variáveis de ambiente com base no exemplo: 
 
 HOST_MAIL: Para armazenar os do servidor de email a ser utilizado.
 HOST_USERNAME: Usuário utilizado no servidor de email
