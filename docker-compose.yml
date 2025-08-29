@@ -1,0 +1,134 @@
+networks:
+  my-network:
+    driver: bridge
+
+services:
+      
+################################################# Serviço do Registry #############################################################    
+  ms-discovery:
+    build:
+      context: .
+      dockerfile: ./ms-discovery/Dockerfile
+    container_name: ms-discovery
+    ports:
+      - 8761:8761
+    networks:
+      - my-network
+    restart: always
+ 
+################################################# Serviço do Gateway #############################################################    
+  ms-gateway:
+    build:
+      context: .
+      dockerfile: ./ms-gateway/Dockerfile
+    container_name: ms-gateway
+    ports:
+      - 8765:8765
+    environment:
+      - URL_SERVICE_DISCOVERY=http://ms-discovery:8761/eureka      
+    networks:
+      - my-network
+    restart: always 
+
+################################################# Serviço de eventos ##############################################################   
+  eventos-db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DATABASE: eventos-db
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+    networks:
+      - my-network
+    volumes:
+      - ms_eventos_data:/var/lib/ms_eventos
+      
+  ms-eventos:
+    build:
+      context: .
+      dockerfile: ./ms-eventos/Dockerfile
+    container_name: ms-eventos
+    environment:
+      - URL_SERVICE_DISCOVERY=http://ms-discovery:8761/eureka 
+      - DATASOURCE_URL=jdbc:postgresql://eventos-db:5432/eventos-db
+      - DATASOURCE_USERNAME=postgres
+      - DATASOURCE_PASSWORD=123456      
+    networks:
+      - my-network   
+    restart: always
+
+################################################# Serviço do Convidados ##############################################################   
+  convidados-db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DATABASE: convidados-db
+    ports:
+      - 5433:5432
+    expose:
+      - 5432
+    networks:
+      - my-network
+    volumes:
+      - ms_convidados_data:/var/lib/ms_convidados
+      
+  ms-convidados:
+    build:
+      context: .
+      dockerfile: ./ms-convidados/Dockerfile
+    container_name: ms-convidados
+    environment:
+      - URL_SERVICE_DISCOVERY=http://ms-discovery:8761/eureka 
+      - DATASOURCE_URL=jdbc:postgresql://convidados-db:5432/convidados-db
+      - DATASOURCE_USERNAME=postgres
+      - DATASOURCE_PASSWORD=123456      
+    networks:
+      - my-network  
+    restart: always
+
+################################################# Serviço do agendamento ##############################################################   
+  agendamento-db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DATABASE: agendamento-db
+    ports:
+      - 5434:5432
+    expose:
+      - 5432
+    networks:
+      - my-network
+    volumes:
+      - ms_agendamento_data:/var/lib/ms_agendamento
+      
+  ms-agendamento:
+    build:
+      context: .
+      dockerfile: ./ms-agendamento/Dockerfile
+    container_name: ms-agendamento
+    environment:
+      - URL_SERVICE_DISCOVERY=http://ms-discovery:8761/eureka 
+      - DATASOURCE_URL=jdbc:postgresql://agendamento-db:5432/agendamento-db
+      - DATASOURCE_USERNAME=postgres
+      - DATASOURCE_PASSWORD=123456
+      - HOST_MAIL=smtp.gmail.com
+      - HOST_PASSWORD=cghjsatjiddlykfn
+      - HOST_USERNAME=bgrbarbosa@gmail.com
+      - PORT=587
+    networks:
+      - my-network  
+    restart: always
+
+######################################################## Volumes usados nos dockers ##############################################    
+volumes:
+  ms_eventos_data:
+  ms_convidados_data:
+  ms_agendamento_data:

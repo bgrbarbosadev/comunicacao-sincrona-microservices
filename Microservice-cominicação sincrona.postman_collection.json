@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "e1b3553f-fe54-4510-bc33-837d7352ff00",
+		"name": "Microservice-cominicação sincrona",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16803873"
+	},
+	"item": [
+		{
+			"name": "MS-EVENTOS",
+			"item": [
+				{
+					"name": "Buscar todos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/ms-eventos/evento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-eventos",
+								"evento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/ms-eventos/evento/3ced5b08-7d38-4fe5-b284-742df1a2270f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-eventos",
+								"evento",
+								"3ced5b08-7d38-4fe5-b284-742df1a2270f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar por id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/ms-eventos/evento/3ced5b08-7d38-4fe5-b284-742df1a2270f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-eventos",
+								"evento",
+								"3ced5b08-7d38-4fe5-b284-742df1a2270f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inserir Evento",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"titleEvento\": \"Teste update agendamento\",\r\n            \"descEvento\": \"Evento para apresentar novas tendencias tecnológicas\",\r\n            \"dtEvento\": \"2025-09-06\",\r\n            \"hrEvento\": \"20:00:00\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/ms-eventos/evento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-eventos",
+								"evento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Evento",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEvento\": \"51303691-5ed8-410b-a528-28f763359424\",\r\n    \"titleEvento\": \"Teste update agendamento - alterado\",\r\n    \"descEvento\": \"Evento para apresentar novas tendencias tecnológicas\",\r\n    \"dtEvento\": \"2025-09-06\",\r\n    \"hrEvento\": \"20:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/ms-eventos/evento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-eventos",
+								"evento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MS-CONVIDADOS",
+			"item": [
+				{
+					"name": "Buscar todos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/ms-convidados/convidado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-convidados",
+								"convidado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/ms-convidados/convidado/893dceda-979d-4ddb-8d48-06f0dd080830",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-convidados",
+								"convidado",
+								"893dceda-979d-4ddb-8d48-06f0dd080830"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por cpf",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/ms-convidados/convidado/cpf/10823410706",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-convidados",
+								"convidado",
+								"cpf",
+								"10823410706"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/ms-convidados/convidado/893dceda-979d-4ddb-8d48-06f0dd080830",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-convidados",
+								"convidado",
+								"893dceda-979d-4ddb-8d48-06f0dd080830"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inserir Convidado",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeConvidado\": \"teste final\",\r\n    \"cpfConvidado\": \"10823410706\",\r\n    \"telConvidado\": \"24988549631\",\r\n    \"emailConvidado\": \"bgrbarbosa@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/ms-convidados/convidado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-convidados",
+								"convidado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Convidado",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idConvidado\": \"0fa5fc11-4b20-4547-b951-eee8680403a0\",\r\n    \"nomeConvidado\": \"teste alterado\",\r\n    \"cpfConvidado\": \"10823410706\",\r\n    \"telConvidado\": \"24988549631\",\r\n    \"emailConvidado\": \"bgrbarbosa@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/ms-convidados/convidado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-convidados",
+								"convidado"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MS-AGENDAMENTO",
+			"item": [
+				{
+					"name": "Buscar todos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/ms-agendamento/agendamento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-agendamento",
+								"agendamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/ms-agendamento/agendamento/dea10351-4d4b-49af-aaf7-5bc2cc8abb1c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-agendamento",
+								"agendamento",
+								"dea10351-4d4b-49af-aaf7-5bc2cc8abb1c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar por id Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/ms-agendamento/agendamento/5c4f126a-4d34-4275-b659-e74d2868c5db",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-agendamento",
+								"agendamento",
+								"5c4f126a-4d34-4275-b659-e74d2868c5db"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inserir Evento Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"convidado\": {\r\n                \"idConvidado\": \"0fa5fc11-4b20-4547-b951-eee8680403a0\",\r\n                \"nomeConvidado\": \"teste final\",\r\n                \"cpfConvidado\": \"10823410706\",\r\n                \"telConvidado\": \"24988549631\",\r\n                \"emailConvidado\": \"bgrbarbosa@hotmail.com\"\r\n            },\r\n            \"evento\": {\r\n                \"idEvento\": \"51303691-5ed8-410b-a528-28f763359424\",\r\n                \"titleEvento\": \"Teste update agendamento\",\r\n                \"descEvento\": \"Evento para apresentar novas tendencias tecnológicas\",\r\n                \"dtEvento\": \"2025-09-06\",\r\n                \"hrEvento\": \"20:00:00\"\r\n            }\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/ms-agendamento/agendamento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-agendamento",
+								"agendamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Evento Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idAgendamento\": \"25df1876-c84e-4e16-9a4b-a6400a7bb90b\",\r\n    \"confirmacao\": \"PENDENTE\",\r\n    \"dataIncricao\": \"2025-08-29\",\r\n    \"dataAtualizacao\": \"2025-08-29\",\r\n    \"convidado\": {\r\n        \"idConvidado\": \"0fa5fc11-4b20-4547-b951-eee8680403a0\",\r\n        \"nomeConvidado\": \"teste final\",\r\n        \"cpfConvidado\": \"10823410706\",\r\n        \"telConvidado\": \"24988549631\",\r\n        \"emailConvidado\": \"bgrbarbosa@hotmail.com\"\r\n    },\r\n    \"evento\": {\r\n        \"idEvento\": \"51303691-5ed8-410b-a528-28f763359424\",\r\n        \"titleEvento\": \"Teste update agendamento\",\r\n        \"descEvento\": \"Evento para apresentar novas tendencias tecnológicas\",\r\n        \"dtEvento\": \"2025-09-06\",\r\n        \"hrEvento\": \"20:00:00\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/ms-agendamento/agendamento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"ms-agendamento",
+								"agendamento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

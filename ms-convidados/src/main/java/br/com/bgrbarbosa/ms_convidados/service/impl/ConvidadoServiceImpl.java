@@ -4,6 +4,7 @@ import br.com.bgrbarbosa.ms_convidados.model.Convidado;
 import br.com.bgrbarbosa.ms_convidados.repository.ConvidadoRepository;
 import br.com.bgrbarbosa.ms_convidados.service.ConvidadoService;
 import br.com.bgrbarbosa.ms_convidados.service.exception.ResourceNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -16,14 +17,14 @@ import java.util.UUID;
 
 
 @Service
+@RequiredArgsConstructor
 public class ConvidadoServiceImpl implements ConvidadoService {
 
-    @Autowired
-    ConvidadoRepository repository;
+    private final ConvidadoRepository repository;
 
-    private final RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
 
-    private final String URL_CONVIDADO_AGENDA = "http://localhost:8084/agendamento/convidado";
+    private final String URL_CONVIDADO_AGENDA = "http://ms-agendamento/agendamento/convidado";
 
     @Override
     public List<Convidado> findAll() {

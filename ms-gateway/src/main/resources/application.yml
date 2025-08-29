@@ -1,3 +1,41 @@
+# application.yml
+server:
+  port: 8765
+
 spring:
   application:
-    name: ms-gateway
+    name: MS-GATEWAY
+  output:
+    ansi:
+      enabled: ALWAYS
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 20000
+zuul:
+  SendErrorFilter:
+    error:
+      disable: false
+  routes:
+    ms-eventos:
+      service-id: ms-eventos
+      path: /ms-eventos/**
+    ms-convidados:
+      service-id: ms-convidados
+      path: /ms-convidados/**
+    ms-agendamento:
+      service-id: ms-agendamento
+      path: /ms-agendamento/**
+eureka:
+  client:
+    service-url:
+      defaultZone: ${URL_SERVICE_DISCOVERY:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}

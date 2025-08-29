@@ -21,9 +21,9 @@ public class EventoServiceImpl implements EventoService {
 
     private final EventoRepository repository;
 
-    private final RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
 
-    private final String URL_EVENTO_AGENDA = "http://localhost:8084";
+    private final String URL_EVENTO_AGENDA = "http://ms-agendamento";
 
     @Override
     public List<Evento> findAll() {
