@@ -1,5 +1,7 @@
 SISTEMA DE AGENDAMENTO DE EVENTOS
 
+Sobre o Projeto:
+
 O sistema de agendamento de eventos foi desenvolvido na tecnologia de microserviços. O mesmo está dividido de acordo com os projetos abaixo:
 
   ms-discovery: Responsável por ser o service registry da aplicação. Ao inicializar, os microserviços se registram no serviço para que possam ser mapeados
