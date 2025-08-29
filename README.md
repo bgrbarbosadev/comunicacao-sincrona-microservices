@@ -1,4 +1,4 @@
-Nome da sua API
+SISTEMA DE AGENDAMENTO DE EVENTOS
 
 O sistema de agendamento de eventos foi desenvolvido na tecnologia de microserviços. O mesmo está dividido de acordo com os projetos abaixo:
 
@@ -34,9 +34,8 @@ Siga estes passos para ter o projeto rodando localmente.
 1) Clone o repositório:
 
 Bash:
-
-git clone https://github.com/bgrbarbosadev/comunicacao-sincrona-microservices.git
-cd comunicacao-sincrona-microservices
+git clone https://github.com/bgrbarbosadev/comunicacao-sincrona-microservices.git </br>
+cd comunicacao-sincrona-microservices </br></br>
 
 2) Crie um arquivo de variáveis de ambiente com base no exemplo:
 
