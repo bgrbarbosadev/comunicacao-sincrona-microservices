@@ -35,7 +35,7 @@ Siga estes passos para ter o projeto rodando localmente.
 
 Bash:
 git clone https://github.com/bgrbarbosadev/comunicacao-sincrona-microservices.git </br>
-cd comunicacao-sincrona-microservices </br></br>
+cd comunicacao-sincrona-microservices </br>
 
 2) Crie um arquivo de variáveis de ambiente com base no exemplo: 
 
@@ -52,98 +52,25 @@ Isso irá construir as imagens do Docker, criar os contêineres e iniciá-los em
 A API estará acessível em http://localhost:PORTA_DA_SUA_API conforme a documentação de cada microserviço.
 
 🧪 Testes
-Para rodar os testes da aplicação:
 
-Entre no contêiner da aplicação:
+Para testes, após a inicialização dos containers só executar o conjunto de requisições disponibilizadas através do arquivo postman contendo as colections utilizadas no projeto.
+Nome do arquivo: Microservice-cominicação sincrona.postman_collection.json
 
-Bash
-
-docker-compose exec nome-do-seu-servico bash
-Execute os testes:
-
-Bash
-
-npm test # ou o comando de teste do seu projeto (ex: php artisan test, pytest)
-📚 Documentação da API
-A documentação é a parte mais importante de uma API. Descreva como usar seus endpoints.
-
-Endpoints Disponíveis
-GET /api/v1/recurso
-Descrição: Retorna uma lista de todos os recursos.
-
-Parâmetros de Query:
-
-limit (opcional): Número de resultados a retornar. Ex: ?limit=10
-
-Resposta:
-
-Sucesso (200 OK):
-
-JSON
-
-[
-  {
-    "id": 1,
-    "nome": "Exemplo"
-  }
-]
-POST /api/v1/recurso
-Descrição: Cria um novo recurso.
-
-Corpo da Requisição (JSON):
-
-JSON
-
-{
-  "nome": "Novo Exemplo"
-}
-Resposta:
-
-Sucesso (201 Created):
-
-JSON
-
-{
-  "message": "Recurso criado com sucesso!"
-}
-Erro (400 Bad Request):
-
-JSON
-
-{
-  "error": "Nome do recurso é obrigatório."
-}
-Adicione mais endpoints aqui, seguindo o mesmo formato.
 🛠️ Tecnologias Utilizadas
 Liste as principais tecnologias, frameworks e bibliotecas usadas no projeto.
 
-Backend: [Nome da Linguagem/Framework] (ex: Node.js, Express)
+Backend: Java versão: 11
 
-Banco de Dados: [Nome do Banco de Dados] (ex: PostgreSQL, MongoDB)
+Banco de Dados: Postgres 
 
 Orquestração: Docker, Docker Compose
 
-Testes: [Nome da ferramenta de testes] (ex: Jest, Mocha)
-
-🤝 Contribuindo
-Contribuições, issues e sugestões são bem-vindas. Siga estas etapas para contribuir:
-
-Faça um fork do projeto.
-
-Crie uma branch para sua feature (git checkout -b feature/minha-feature).
-
-Commit suas mudanças (git commit -m 'feat: Adiciona nova feature').
-
-Envie para a branch original (git push origin feature/minha-feature).
-
-Abra um Pull Request.
-
 📝 Licença
-Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE.md para detalhes.
+Este projeto é livre. Desenvolvido para práticas acadêmicas.
 
 ✉️ Contato
-Seu Nome/Nome da Equipe - 
+Bruno Gaspar Romeiro Barbosa - (24)98854-9631
 
-E-mail: [seu.email@exemplo.com]
+E-mail: [bgrbarbosa@hotmail.com]
 
 Fique à vontade para entrar em contato com qualquer dúvida ou sugestão.
